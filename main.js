@@ -1,3 +1,19 @@
+async function refresh(){
+    try {
+        let result =await axios.get("https://crudcrud.com/api/703ce4f9fdfd4321a3737c7911622e94/studentdata")
+
+        for(let i=0;i<result.data.length;i++){
+
+            useronscreen(result.data[i])
+        }
+    } catch (error) {
+        console.log(error)
+        
+    }
+}
+
+refresh();
+
 function Formdata(event){
 
     event.preventDefault()
@@ -45,6 +61,6 @@ function useronscreen(obj){
     c.value="delete"
     c.type="button"
     a.appendChild(c)
-    
+
 
 }
